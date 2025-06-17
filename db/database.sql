@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    usuario TEXT NOT NULL UNIQUE,
+    senha TEXT NOT NULL,
+    perfil TEXT NOT NULL CHECK (perfil IN ('admin', 'comum'))
+);
+
+CREATE TABLE IF NOT EXISTS produtos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    quantidade INTEGER NOT NULL,
+    minimo INTEGER NOT NULL
+);
